@@ -4,6 +4,12 @@
 #define MODE 1
 using namespace std;
 
+int sum(int x, int y)
+{
+    int add = x + y;
+    return add;
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -16,9 +22,8 @@ int main()
         cin >> x;
         cout << endl << "введите число 2: ";
         cin >> y;
-        int add = x + y;
-        cout << endl << "Результат сложения: " << add;
+        cout << endl << "Результат сложения: " << sum(x, y);
 #else 
-    cout << "Неизвестный режим. Завершение работы" << endl;
+#error "Неизвестный режим. Завершение работы"
 #endif
 }
