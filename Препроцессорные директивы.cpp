@@ -4,11 +4,13 @@
 #define MODE 1
 using namespace std;
 
+#if MODE == 1
 int sum(int x, int y)
 {
     int add = x + y;
     return add;
 }
+#endif
 
 int main()
 {
@@ -23,7 +25,9 @@ int main()
         cout << endl << "введите число 2: ";
         cin >> y;
         cout << endl << "Результат сложения: " << sum(x, y);
-#else 
+#elif MODE > 1 
 #error "Неизвестный режим. Завершение работы"
+#else
+#error "Констатнта MODE не определена. Введите значение MODE."
 #endif
 }
